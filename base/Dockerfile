@@ -1,4 +1,4 @@
-FROM openjdk:11-stretch
+FROM openjdk:8-stretch
 
 RUN apt-get update -y
 RUN apt-get upgrade -y
@@ -15,8 +15,8 @@ RUN wget http://www.gtlib.gatech.edu/pub/apache/storm/apache-storm-2.0.0/apache-
       mv /opt/apache-storm-2.0.0 /opt/apache-storm
 
 RUN git clone https://github.com/willli666/real-time-recommender.git
-# RUN cd real-time-recommender &&\
-#       sbt 'set test in assembly := {}' assembly &&\
-#       cd ..
+RUN cd real-time-recommender &&\
+       sbt 'set test in assembly := {}' assembly &&\
+       cd ..
 
 ADD configure.sh /
