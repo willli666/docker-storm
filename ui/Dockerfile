@@ -1,4 +1,4 @@
-FROM tjlian616/storm-base:v3
+FROM tjlian616/storm-base:v4
 
 ADD start.sh /
 

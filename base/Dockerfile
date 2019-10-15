@@ -10,9 +10,13 @@ RUN apt-get update -y
 RUN apt-get upgrade -y
 RUN apt-get install sbt -y
 
-RUN wget http://www.gtlib.gatech.edu/pub/apache/storm/apache-storm-2.0.0/apache-storm-2.0.0.tar.gz &&\
-      tar -C /opt -xvzf apache-storm-2.0.0.tar.gz  && \
-      mv /opt/apache-storm-2.0.0 /opt/apache-storm
+#RUN wget http://www.gtlib.gatech.edu/pub/apache/storm/apache-storm-2.0.0/apache-storm-2.0.0.tar.gz &&\
+#      tar -C /opt -xvzf apache-storm-2.0.0.tar.gz  && \
+#      mv /opt/apache-storm-2.0.0 /opt/apache-storm
+
+RUN wget https://www-us.apache.org/dist/storm/apache-storm-1.2.3/apache-storm-1.2.3.tar.gz &&\
+      tar -C /opt -xvzf apache-storm-1.2.3.tar.gz &&\
+      mv /opt/apache-storm-1.2.3 /opt/apache-storm
 
 RUN git clone https://github.com/willli666/real-time-recommender.git
 RUN cd real-time-recommender &&\
